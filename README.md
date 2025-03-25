@@ -3,7 +3,7 @@ Big O Notation + Data Structures + Algorithms exercises with Java
 
 (All content here refers to the course **"Master the Coding Interview: Data Structures + Algorithms"** by Andrei Neagoie - https://www.udemy.com/share/1013ja3@Ahg-_VoZoRNnhroJCNpiaHHTGeM2xkzu7Zh7lqng98FGhNabwGjP9nefcmM4azc=/)
 
-(The following content is a mix of course resume and some copy and paste of checklists, guides, step-by-step instructions etc.)
+(The following content is a mix of course resume and some copy and paste of checklists, guides, step-by-step instructions etc - I wrote it as a way to fix better new knowledge and have a reference to read when needed)
 
 ## Big O complexity chart
 ![bigocomplexitychart.jpg](bigocomplexitychart.jpg)

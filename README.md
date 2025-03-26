@@ -69,17 +69,17 @@ Big O Notation + Data Structures + Algorithms exercises with Java
     - Space complexity (Big O)
     - Efficient (lower memory usage to complete the algorithm)
 
-## Trade-off for good code:
+## Trade-off for good code
 - Fast algorithms usually require more memory
 - Low memory algorithms usually require more time
 
-## What skills interviewer is looking for:
+## What skills interviewer is looking for
 - Analytic skills - How can you think through problems and analyze things ?
 - Coding skills - Do you code well, by writing clean, simple, organized, readable code ?
 - Technical knowledge - Do you know the fundamentals of the job you're applying for ?
 - Communications skills - Does your personality match the companie's culture ?
 
-## Step by step through a problem:
+## Step by step through a problem
 1. When the interviewer says the question, write down the key points at the top. 
    - Make sure you have all the details. 
    - Show how organized you are
@@ -134,7 +134,7 @@ Big O Notation + Data Structures + Algorithms exercises with Java
     - This is a common follow-up question at Google, where they care a lot about scale.
     - The answer is usually a divide-and-conquer approach - perfom distributed processing of the data and only read certain chunks of the input from disk into memory, write the ouput back to disk and combine them later.
 
-## Good code checklist:
+## Good code checklist
 - [✅]It works
 - [✅]Good use of data structures
 - [✅]Code Re-use/ Do Not Repeat Yourself
@@ -142,7 +142,7 @@ Big O Notation + Data Structures + Algorithms exercises with Java
 - [✅]Less than O(N^2). We want to avoid nested loops if we can since they are expensive. Two separate loops are better than 2 nested loops
 - [✅]Low Space Complexity --> Recursion can cause stack overflow, copying of large arrays may exceed memory of machine
 
-## Heurestics to ace the question:
+## Heurestics to ace the question
 - [✅]Hash Maps are usually the answer to improve Time Complexity
 - [✅]If it's a sorted array, use Binary tree to achieve O(log N). Divide and Conquer - Divide a data set into smaller chunks and then repeating a process with a subset of data. Binary search is a great
 example of this
@@ -151,3 +151,89 @@ example of this
 - [✅]Look at the Time vs Space tradeoff. Sometimes storing extra state in memory can help the time. (Runtime)
 - [✅]If the interviewer is giving you advice/tips/hints. Follow them
 - [✅]Space time tradeoffs: Hastables usually solve this a lot of the times. You use more space, but you can get a time optimization to the process. In programming, you often times can use up a little bit more space to get faster time
+
+## Common Data Structure Operations
+![CommonDataStructureOperations.png](CommonDataStructureOperations.png)
+
+## Array Sorting Algorithms
+![ArraySortingAlgorithms.png](ArraySortingAlgorithms.png)
+
+## Data Structures
+- List of existing data structures: https://en.wikipedia.org/wiki/List_of_data_structures
+
+## Arrays
+- Collection / sequence of indexed data
+- Ordered
+- Access - O(1) - using index there is no need to traversal the collection
+- Search - O(n) - needs to traversal the collection to search
+- Insertion - O(n) - needs to traversal the collection to shift the index of existing items
+- Insertion on end - O(1) - using index there is no need to traversal the collection
+- Deletion - O(n) - needs to traversal the collection to shift the index of remaining items
+- Deletion on end - O(1) - using index there is no need to traversal the collection
+- Static - fixed size and memory allocation
+- Dynamic - non fixed size and dynamic memory allocation (ArrayLists in Java)
+- On Java:
+  - int[] arr = new int[]{1,2,3}
+  - arr.length
+  - Transform in a list to manipulate and then get back to static array
+  - Sorting: Arrays.sort(arr) | Arrays.sort(arr, Comparator.comparing(String::toString).reversed())
+  - Reverse a string(array of chars): StringBuilder output = new StringBuilder(input).reverse().toString();
+  - Merge two arrays: Collections.addAll(arraylist, array1); Collections.addAll(arraylist, array2); arrayList.toArray();
+  - https://www.baeldung.com/java-arrays-guide
+  - https://www.baeldung.com/java-reverse-string
+  - https://www.baeldung.com/java-concatenate-arrays
+
+## Algorithms
+- Sequence of steps / instructions to execute some task and get some results
+- Applying the most appropriate algorithm the time and space complexity can be optimized, usually O(n), O(log n) or O(1), linear
+
+## Recursion
+- It's more about a technique than about an algorithm
+- Occurs when a function calls itself
+- Can cause a call stack overflow if not implemented properly, due to memory allocation to control calls
+- Identify the recursive case (point where recursion starts)
+- Identify the base case (point where recursion is controlled / conditioned / stopped)
+- Example:
+````
+public int findFactorialRecursive(int number) {
+    if(number <= 2) { // base case
+        return number;
+    }
+    return number * findFactorialRecursive(number-1); // recursive case
+}
+````
+- Fibonacci case
+  - The recursive version results in a O(n^2) time complexity, which is very bad
+  - In this case the interactive version is much better, because it's linear, a O(n) time complexity
+````
+// Given a number N return the index value of the Fibonacci sequence, where the sequence is:
+// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 ...
+// the pattern of the sequence is that each value is the sum of the 2 previous values, that means that for N=5 → 2+3
+
+public int fibonacciInteractive(int number) {
+    List<int> arr = new ArrayList<>();
+    arr.add(0);
+    arr.add(1);
+    
+    for(int i=2; i<=number; i++) {
+        arr.add(arr.get(i-2) + arr.get(i-1));
+    }
+    
+    return arr.get(number);
+}
+
+public int fibonacciRecursive(int number) {
+    if(number < 2) {
+        return number;
+    }
+    return fibonacciRecursive(number-1) + fibonacciRecursive(number-2); 
+}
+````
+- When to use recursion:
+  - Every time you are using a tree or converting something into a tree consider recursion
+    - Divided into a number of sub problems that are smaller instances of the same problem
+    - Each instance of the sub problem is identical in nature
+    - The solutions of each sub problem can be combined to solve the problem at hand
+  - Divide and conquer using recursion
+- Using recursion can turn code more readable, but pay attention to the increase of cost in time complexity
+- Anything you do with a recursion can be done iteratively (loop)

@@ -73,6 +73,11 @@ Big O Notation + Data Structures + Algorithms exercises with Java
 - Fast algorithms usually require more memory
 - Low memory algorithms usually require more time
 
+## How to Solve coding problems
+- [Google interview](https://youtu.be/XKu_SEDAykw?si=iffIYjyP45qLsd5b)
+- [Code](src/howToSolveCodingProblems/googleInterview/GoogleInterviewExercise.java)
+- [Match 3 game exercise](src/howToSolveCodingProblems/MatrixExercise.java)
+
 ## What skills interviewer is looking for
 - Analytic skills - How can you think through problems and analyze things ?
 - Coding skills - Do you code well, by writing clean, simple, organized, readable code ?
@@ -80,34 +85,36 @@ Big O Notation + Data Structures + Algorithms exercises with Java
 - Communications skills - Does your personality match the companie's culture ?
 
 ## Step by step through a problem
-1. When the interviewer says the question, write down the key points at the top. 
+1. First of all, watch to window time for the interview and plan how to complete all tasks / tests, leaving time for questions made by interviewer and by you
+2. Always pay attention to be very quickly and straight forward, find a ideal division between express your thoughts and knowledge without been boring or using too much time
+3. When the interviewer says the question, write down the key points at the top. 
    - Make sure you have all the details. 
    - Show how organized you are
-2. Make sure you double check
+4. Make sure you double check
    - What are the inputs ? 
    - What are the outputs ?
-3. What is the most important value of the problem ? 
+5. What is the most important value of the problem ? 
    - Do you have time, space, memory etc ? 
    - What is the main goal ?
-4. Don't be annoying and ask too many questions to the interviewer
-5. Start with the naive/bute force approach. 
+6. Don't be annoying and ask too many questions to the interviewer
+7. Start with the naive/bute force approach. 
    - First thing that comes into mind. 
    - It shows that you're able to think well and critically (you don't need to write this code, just speak about it).
-6. Tell them why this approach is not the best (i.e. O(n^2)) or higher, not readable etc...
-7. Walk through your approach, comment things and see where you may be able to break things. 
+8. Tell them why this approach is not the best (i.e. O(n^2)) or higher, not readable etc...
+9. Walk through your approach, comment things and see where you may be able to break things. 
    - Any repetition, bottlenecks like O(n^2), or unnecessary work ? 
    - Did you use all the information the interviewer gave you? 
    - Bottleneck is the part of the code with biggest Big O. Focus on that. Sometimes this occurs with repeated work as well.
-8. Before you start coding, walk through your code and write down the steps you are going to follow
-9. Modularize your code from the very beginning. 
-   - Break up your code into beautiful small pieces and add just comments if you need to.
-10. Start actually writing your code now. 
+10. Before you start coding, walk through your code and write down the steps you are going to follow
+11. Modularize your code from the very beginning. 
+    - Break up your code into beautiful small pieces and add just comments if you need to.
+12. Start actually writing your code now. 
     - Keep in mind that the more you prepare and understand what you need to code, the better the whiteboard will go.
     - So never start a whiteboard interview not being sure of how things are going to work out. That is a recipe for disaster.
     - Keep in mind - A lot of interviews ask questions that you won't be able to fully answer on time.
     - So think: what can I show in order to show that I can do this and I am better the other coders.
     - Break things up in functions, methods etc (if you can't remember a method, just make up a function and you will at least have it there. Write something, and start with the easy part)
-11. Think about error checks and how you can break this code.
+13. Think about error checks and how you can break this code.
     - Never make assumptions about the input 
     - Assume people are trying to break your code and that Darth Vader is using your function.
     - How will you safeguard it ?
@@ -116,19 +123,19 @@ Big O Notation + Data Structures + Algorithms exercises with Java
       - comment in the code, the checks that you want to do... 
       - write the function, 
       - then tell the interviewer that you would write tests now to make your function fail (but you won't need to actually write the tests)
-12. Don't use bad/confusing names like i and j for variables, instances etc - write code that reads well
-13. Test your code: Check for no params, 0 undefined, null, massive arrays, async code etc... 
+14. Don't use bad/confusing names like i and j for variables, instances etc - write code that reads well
+15. Test your code: Check for no params, 0 undefined, null, massive arrays, async code etc... 
     - Ask the interviewer if we can make assumption about the code
     - Can you make the answer return an error ?
     - Poke holes into your solution. Are you repeating yourself ?
-14. Finally talk to the interviewer where you would improve the code. 
+16. Finally talk to the interviewer where you would improve the code. 
     - Does it work ?
     - Are there different approaches ?
     - Is it readable ?
     - What would you google to improve ?
     - How can performance be improved ?
     - Possibly: Ask the interviewer what was the most interesting solution you have seen to this problem
-15. If your interviewer is happy with the solution, the interview usually ends here.
+17. If your interviewer is happy with the solution, the interview usually ends here.
     - It is also common that the interviewer asks you extension questions, such as how you would handle the problem if the whole input is too large to fit into memory
     - or if the input arrives as a stream
     - This is a common follow-up question at Google, where they care a lot about scale.
@@ -191,44 +198,13 @@ example of this
 - It's more about a technique than about an algorithm
 - Occurs when a function calls itself
 - Can cause a call stack overflow if not implemented properly, due to memory allocation to control calls
-- Identify the recursive case (point where recursion starts)
-- Identify the base case (point where recursion is controlled / conditioned / stopped)
-- Example:
-````
-public int findFactorialRecursive(int number) {
-    if(number <= 2) { // base case
-        return number;
-    }
-    return number * findFactorialRecursive(number-1); // recursive case
-}
-````
-- Fibonacci case
+- To help decide when to apply recursion, consider the following:
+  - Identify the recursive case (point where recursion starts)
+  - Identify the base case (point where recursion is controlled / conditioned / stopped)
+- In the [Factorial](src/algorithms/recursion/Factorial.java) case both approaches (iterative and recursive) result in same time complexity
+- In the [Fibonacci](src/algorithms/recursion/Fibonacci.java) case:
   - The recursive version results in a O(n^2) time complexity, which is very bad
   - In this case the interactive version is much better, because it's linear, a O(n) time complexity
-````
-// Given a number N return the index value of the Fibonacci sequence, where the sequence is:
-// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 ...
-// the pattern of the sequence is that each value is the sum of the 2 previous values, that means that for N=5 → 2+3
-
-public int fibonacciInteractive(int number) {
-    List<int> arr = new ArrayList<>();
-    arr.add(0);
-    arr.add(1);
-    
-    for(int i=2; i<=number; i++) {
-        arr.add(arr.get(i-2) + arr.get(i-1));
-    }
-    
-    return arr.get(number);
-}
-
-public int fibonacciRecursive(int number) {
-    if(number < 2) {
-        return number;
-    }
-    return fibonacciRecursive(number-1) + fibonacciRecursive(number-2); 
-}
-````
 - When to use recursion:
   - Every time you are using a tree or converting something into a tree consider recursion
     - Divided into a number of sub problems that are smaller instances of the same problem

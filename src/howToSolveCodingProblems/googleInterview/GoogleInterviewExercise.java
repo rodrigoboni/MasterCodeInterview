@@ -1,4 +1,4 @@
-package HowToSolveCodingProblems.GoogleInterview;
+package howToSolveCodingProblems.googleInterview;
 
 import java.util.HashSet;
 import java.util.Set;

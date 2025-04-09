@@ -223,6 +223,7 @@ example of this
     - To solve this problem the hash function implementations has an algorithm for collision resolution, usually applying the separated chaining or open addressing methods
       - Separate chaining: consists in build a linked list with key-value for each array index, allowing to retrieve a value by it's key in O(1) time complexity
       - Open addressing: https://en.wikipedia.org/wiki/Open_addressing
+  - Implementations examples in package [src/dataStructures/hashtables](src/dataStructures/hashtables)
 
 ## Algorithms
 - Sequence of steps / instructions to execute some task and get some results

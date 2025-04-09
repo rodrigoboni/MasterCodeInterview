@@ -10,7 +10,6 @@ Big O Notation + Data Structures + Algorithms exercises with Java
 
 ## Course Mind maps
 - https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link
-- https://coggle.it/diagram/W5u8QkZs6r4sZM3J/t/master-the-interview
 
 ## Big O Cheatsheets
 - https://zerotomastery.io/cheatsheets/big-o-cheat-sheet/
@@ -165,6 +164,12 @@ example of this
 ## Array Sorting Algorithms
 ![ArraySortingAlgorithms.png](ArraySortingAlgorithms.png)
 
+## Data Structures Map
+- (Use for quick view of pros and cons of each data structure and their applications)
+- ![DataStructuresMindMap.png](DataStructuresMindMap.png)
+- [PDF version](DataStructuresMindMap.pdf)
+- [Original](https://coggle.it/diagram/W5u8QkZs6r4sZM3J/t/master-the-interview)
+
 ## Data Structures
 - List of existing data structures: https://en.wikipedia.org/wiki/List_of_data_structures
 
@@ -196,10 +201,10 @@ example of this
 
 ## Hash tables
 - Time complexity:
-  - Insertion - O(1)
-  - Lookup - O(1)
-  - Deletion - O(1)
-  - Search - O(1)
+    - Insertion - O(1)
+    - Lookup - O(1)
+    - Deletion - O(1)
+    - Search - O(1)
 - Definition:
   - https://en.wikipedia.org/wiki/Hash_table
   - One of most common data structures used in technical interviews
@@ -223,7 +228,12 @@ example of this
     - To solve this problem the hash function implementations has an algorithm for collision resolution, usually applying the separated chaining or open addressing methods
       - Separate chaining: consists in build a linked list with key-value for each array index, allowing to retrieve a value by it's key in O(1) time complexity
       - Open addressing: https://en.wikipedia.org/wiki/Open_addressing
-  - Implementations examples in package [src/dataStructures/hashtables](src/dataStructures/hashtables)
+- Implementations examples in package [src/dataStructures/hashtables](src/dataStructures/hashtables)
+- Important tips:
+  - Unordered data structure
+  - Slow key iteration (if needed to grab all the keys)
+  - Has the tradeoff of using more memory (space complexity O(n))
+  - Usually applied to improve time complexity from quadratic O(n^2) to linear O(n), due to reduce nested loop to only one loop, for example
 
 ## Algorithms
 - Sequence of steps / instructions to execute some task and get some results

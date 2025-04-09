@@ -9,7 +9,7 @@ Big O Notation + Data Structures + Algorithms exercises with Java
 ![bigocomplexitychart.jpg](bigocomplexitychart.jpg)
 
 ## Course Mind maps
-- https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link
+- https://coggle.it/diagram/W5u8QkZs6r4sZM3J/t/master-the-interview
 
 ## Big O Cheatsheets
 - https://zerotomastery.io/cheatsheets/big-o-cheat-sheet/
@@ -168,7 +168,7 @@ example of this
 - (Use for quick view of pros and cons of each data structure and their applications)
 - ![DataStructuresMindMap.png](DataStructuresMindMap.png)
 - [PDF version](DataStructuresMindMap.pdf)
-- [Original](https://coggle.it/diagram/W5u8QkZs6r4sZM3J/t/master-the-interview)
+- [Original](https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link)
 
 ## Data Structures
 - List of existing data structures: https://en.wikipedia.org/wiki/List_of_data_structures

@@ -235,6 +235,81 @@ example of this
   - Has the tradeoff of using more memory (space complexity O(n))
   - Usually applied to improve time complexity from quadratic O(n^2) to linear O(n), due to reduce nested loop to only one loop, for example
 
+## Trees
+- Definition:
+    - https://en.wikipedia.org/wiki/Tree_(abstract_data_type)
+    - Hierarchical tree structure with a set of connected nodes. Each node can be connected to many children, but must be connected to exactly one parent, except for the root node.
+    - These constraints mean there are no cycles or loops in the tree.
+    - Each child node can be treated like the root node of its own subtree
+    - Recursion is a useful technique for tree traversal
+    - Tree it's a abstract data structure
+    - There is many different tree types - Look at Trees section at [Wikipedia](https://en.wikipedia.org/wiki/List_of_data_structures)
+
+## Binary Tree
+![perfectbinarytree.jpg](perfectbinarytree.jpg)
+- Time complexity:
+    - Insertion - O(log N)
+    - Lookup - O(log N)
+    - Deletion - O(log N)
+- Definition:
+    - https://en.wikipedia.org/wiki/Binary_tree
+    - Each node can have either zero, one or two child nodes
+    - Each child can only one parent
+    - There is two types of binary tree:
+      - Perfect binary tree: when all nodes are defined with left and right child
+      - Full binary tree: when one or more nodes have zero or left and right child
+    - The perfect binary tree is the most desirable and efficient tree, with the following properties:
+        - The number of total nodes doubles as we move down the tree
+        - The number of nodes on the last level equals the number of nodes on previous nodes plus 1
+    - This means that the half of nodes are on the last level, which brings efficiency while searching for something
+    - Explanation about the time complexity O(log N) for lookup:
+      - log N is the representation of the number of steps to find an element, based on the number of nodes in the binary tree
+      - definition for logarithm - https://en.wikipedia.org/wiki/Logarithm
+      - example: 
+        - to find the element 5, there is 3 steps to follow traversing the tree: 1 > 2 > 5
+        - (there is no other path to reach the element 5)
+    - Based on this properties, binary tree it's a very optimized data structure when talking about lookup
+
+## Binary Search Tree (BST)
+![bsttreetraversal.png](bsttreetraversal.png)
+![unbalancedbstree.png](unbalancedbstree.png)
+- Time complexity:
+    - Insertion - O(log N)
+    - Lookup - O(log N)
+    - Deletion - O(log N)
+- Definition:
+    - https://en.wikipedia.org/wiki/Binary_search_tree
+    - [Visual binary search tree](https://visualgo.net/en/bst)
+    - Ordered
+    - Flexible size
+    - Very optimized for searching and comparing elements
+    - This data structures preserves relationships between elements (ie a list of files each in a different folder)
+    - Rules:
+      - All child nodes to the right of root node must be greater than parent node
+      - All child nodes to the left of root node must be lower than parent node
+      - A node can have up to 2 child nodes (left and right)
+    - This rules result in a very optimized lookup algorithm, for example to find the element 3 the algorithm verify from the root node:
+      - 4 is greater than 3 ? Yes, so move to the next element in the left
+      - 2 is greater than 3 ? No, so move to the next element right
+      - Found the 3 element
+    - Balanced vs Unbalanced:
+      - A balanced BST is a tree with all nodes (left and right)
+      - A unbalanced BST is a tree with uncompleted nodes (left or right only)
+    - A unbalanced BST results in a worse time complexity of linear O(n), because to lookup, insert or delete an element it's needed to traversal the unbalanced tree element by element
+
+## DataStructure ?
+- Time complexity:
+    - Insertion - ?
+    - Lookup - ?
+    - Deletion - ?
+    - Search - ?
+- Definition:
+    - (link to wikipedia)
+    - ?
+- Implementations examples in package [src/dataStructures/?](src/dataStructures/?)
+- Important tips:
+    - ?
+
 ## Algorithms
 - Sequence of steps / instructions to execute some task and get some results
 - Applying the most appropriate algorithm the time and space complexity can be optimized, usually O(n), O(log n) or O(1), linear

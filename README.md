@@ -16,6 +16,9 @@ Big O Notation + Data Structures + Algorithms exercises with Java
 - https://zerotomastery.io/cheatsheets/data-structures-and-algorithms-cheat-sheet/
 - https://www.bigocheatsheet.com/
 
+## Wikipedia reference
+- https://en.wikipedia.org/wiki/Big_O_notation
+
 ## Big O's (For time and space complexity)
 - **O(1)** Constant- no loops
 - **O(log N)** Logarithmic - usually searching algorithms have log n if they are sorted (Binary Search)
@@ -235,6 +238,29 @@ example of this
   - Has the tradeoff of using more memory (space complexity O(n))
   - Usually applied to improve time complexity from quadratic O(n^2) to linear O(n), due to reduce nested loop to only one loop, for example
 
+## Linked Lists
+- Time complexity:
+  - Prepend: O(1)
+  - Append: O(1)
+  - Lookup: O(n) 
+  - Insert: O(n)
+  - Delete: O(n)
+- Definition:
+  - https://en.wikipedia.org/wiki/Linked_list
+  - Playground: https://visualgo.net/en/list
+  - It's a linear collection of data elements whose order is not given by their physical placement in memory - instead, each element points to the next, like a collection of nodes which together represents a sequence of data
+  - Each node has their own data and a pointer to next node
+  - The first node is called "head", while the final node is called "tail"
+  - It's a ordered data structure
+  - A linked list which has pointer only for the next item is called singly linked list
+  - A doubly linked list it's the same node structure with an additional pointer in each node, pointing to the previous node, which is very optimized for lookup for example, applying the idea of dividing and conquer
+  - Singly linked lists requires less memory space and is useful for operations that requires more inserts and deletions than lookups
+  - Doubly linked lists requires more memory, but is useful for lookup operations
+  - Linked lists are fast for insertion and deletion, have flexible size and keeps ordered, but it's slow for lookups and requires more memory
+  - The main reason to choose a linked list over an array, for example, is the simplicity to grow and shrink as needed
+
+## Stacks & Queues
+
 ## Trees
 - Definition:
     - https://en.wikipedia.org/wiki/Tree_(abstract_data_type)
@@ -253,15 +279,18 @@ example of this
     - Deletion - O(log N)
 - Definition:
     - https://en.wikipedia.org/wiki/Binary_tree
-    - Each node can have either zero, one or two child nodes
-    - Each child can only one parent
-    - There is two types of binary tree:
-      - Perfect binary tree: when all nodes are defined with left and right child
-      - Full binary tree: when one or more nodes have zero or left and right child
-    - The perfect binary tree is the most desirable and efficient tree, with the following properties:
-        - The number of total nodes doubles as we move down the tree
-        - The number of nodes on the last level equals the number of nodes on previous nodes plus 1
-    - This means that the half of nodes are on the last level, which brings efficiency while searching for something
+    - A binary tree is a hierarchical data structure consisting of nodes, where each node has at most two children, referred to as the left child and the right child.
+    - Each node contains a value/data and references to its left and right children
+    - A node with no children is called a leaf node
+    - The topmost node is called the root node
+    - Each node (except the root) has exactly one parent node
+    - Types of binary trees:
+        - Full binary tree: when one or more nodes have zero or 2 children (left and right)
+        - Perfect binary tree: when all nodes are defined with left and right child, with the following properties:
+          - The number of total nodes doubles as we move down the tree
+          - The number of nodes on the last level equals the number of nodes on previous nodes plus 1
+          - All leaf nodes are at the same level
+          - This means that the half of nodes are on the last level, which brings efficiency while searching for something
     - Explanation about the time complexity O(log N) for lookup:
       - log N is the representation of the number of steps to find an element, based on the number of nodes in the binary tree
       - definition for logarithm - https://en.wikipedia.org/wiki/Logarithm
@@ -279,15 +308,11 @@ example of this
     - Deletion - O(log N)
 - Definition:
     - https://en.wikipedia.org/wiki/Binary_search_tree
-    - [Visual binary search tree](https://visualgo.net/en/bst)
-    - Ordered
-    - Flexible size
-    - Very optimized for searching and comparing elements
-    - This data structures preserves relationships between elements (ie a list of files each in a different folder)
-    - Rules:
+    - Playground: https://visualgo.net/en/bst
+    - Binary search tree is a special type of binary tree with an important ordering property:
+      - All child nodes to the left of root node must be lower than parent node 
       - All child nodes to the right of root node must be greater than parent node
-      - All child nodes to the left of root node must be lower than parent node
-      - A node can have up to 2 child nodes (left and right)
+      - No duplicate values are typically allowed (though variations exist that handle duplicates)
     - This rules result in a very optimized lookup algorithm, for example to find the element 3 the algorithm verify from the root node:
       - 4 is greater than 3 ? Yes, so move to the next element in the left
       - 2 is greater than 3 ? No, so move to the next element right
@@ -297,18 +322,7 @@ example of this
       - A unbalanced BST is a tree with uncompleted nodes (left or right only)
     - A unbalanced BST results in a worse time complexity of linear O(n), because to lookup, insert or delete an element it's needed to traversal the unbalanced tree element by element
 
-## DataStructure ?
-- Time complexity:
-    - Insertion - ?
-    - Lookup - ?
-    - Deletion - ?
-    - Search - ?
-- Definition:
-    - (link to wikipedia)
-    - ?
-- Implementations examples in package [src/dataStructures/?](src/dataStructures/?)
-- Important tips:
-    - ?
+## Graphs
 
 ## Algorithms
 - Sequence of steps / instructions to execute some task and get some results
@@ -333,3 +347,12 @@ example of this
   - Divide and conquer using recursion
 - Using recursion can turn code more readable, but pay attention to the increase of cost in time complexity
 - Anything you do with a recursion can be done iteratively (loop)
+
+## Sorting
+- https://en.wikipedia.org/wiki/Sorting_algorithm
+- https://brilliant.org/wiki/heap-sort/
+- https://medium.com/@reetesh043/collection-sort-vs-arrays-sort-in-java-1528f83223c3#:~:text=sort()%20is%20a%20dual,by%20using%20two%20pivot%20elements.
+
+## Searching + BFS + DFS
+
+## Dynamic programming

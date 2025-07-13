@@ -1,10 +1,5 @@
 package dataStructures.hashtables.implementing_hashtable;
 
-/*
-Note: This code can be Optimized with all types of safety but for sake of understanding
-      its been kept simple.
-*/
-
 import java.util.ArrayList;
 import java.util.Arrays;
 

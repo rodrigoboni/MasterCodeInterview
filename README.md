@@ -232,6 +232,19 @@ example of this
       - Separate chaining: consists in build a linked list with key-value for each array index, allowing to retrieve a value by it's key in O(1) time complexity
       - Open addressing: https://en.wikipedia.org/wiki/Open_addressing
 - Implementations examples in package [src/dataStructures/hashtables](src/dataStructures/hashtables)
+- Most commom implementation in Java:
+  - HashMap (non thread safe):
+    - Map<String, Integer> map = new HashMap<>()
+    - Methods:
+      - put(key,value)
+      - get(key)
+      - remove(key)
+  - ConcurrentHashMap (thread safe):
+    - ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
+    - Methods:
+      - put(key,value)
+      - get(key)
+      - remove(key)
 - Important tips:
   - Unordered data structure
   - Slow key iteration (if needed to grab all the keys)
@@ -258,8 +271,23 @@ example of this
   - Doubly linked lists requires more memory, but is useful for lookup operations
   - Linked lists are fast for insertion and deletion, have flexible size and keeps ordered, but it's slow for lookups and requires more memory
   - The main reason to choose a linked list over an array, for example, is the simplicity to grow and shrink as needed
+- Most commom implementation in Java:
+- LinkedList
+  - LinkedList<String> list = new LinkedList<>();
+  - Methods:
+    - add(value)
+    - addFirst(value)
+    - addLast(value)
+    - getFirst()
+    - getLast()
+    - get(index)
+    - removeFirst()
+    - removeLast()
+    - remove(index)
 
 ## Stacks & Queues
+
+
 
 ## Trees
 - Definition:
@@ -270,7 +298,13 @@ example of this
     - Recursion is a useful technique for tree traversal
     - Tree it's a abstract data structure
     - There is many different tree types - Look at Trees section at [Wikipedia](https://en.wikipedia.org/wiki/List_of_data_structures)
-
+- Most commom implementation in Java:
+  - TreeMap<String, Integer> treeMap = new TreeMap<>(); //key-value pairs, sorted by keys
+  - Methods:
+    - put(key, value)
+  - TreeSet<Integer> treeSet = new TreeSet<>(); //unique elements, sorted
+    - add(value)
+  
 ## Binary Tree
 ![perfectbinarytree.jpg](perfectbinarytree.jpg)
 - Time complexity:

@@ -1,4 +1,4 @@
-package howToSolveCodingProblems;
+package howToSolveCodingProblems.matrix;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class MatrixExercise {
 	
 	public static String formatMatrix(List<List<Integer>> matrix) { //O(m*n)
-		if(matrix == null || matrix.isEmpty() || matrix.getFirst() == null || matrix.getFirst().isEmpty()) {
+		if(matrix == null || matrix.isEmpty() || matrix.get(0) == null || matrix.get(0).isEmpty()) {
 			return null; //O(1)
 		}
 		
@@ -25,7 +25,7 @@ public class MatrixExercise {
 	
 	// the optimization here becomes from the use of streams, map e joining functions, reducing the number of iterations on elements
 	public static String formatMatrixOptimized(List<List<Integer>> matrix) { //O(m*n)
-		if(matrix == null || matrix.isEmpty() || matrix.getFirst() == null || matrix.getFirst().isEmpty()) {
+		if(matrix == null || matrix.isEmpty() || matrix.get(0) == null || matrix.get(0).isEmpty()) {
 			return null; //O(1)
 		}
 		
@@ -39,12 +39,12 @@ public class MatrixExercise {
 	// the optimization here becomes from the maximum level of nested loops with 2 (one for horizontal and one for vertical)
 	// the use of while loop to mark matched elements also result in improvement, since only the needed items are considered
 	public static List<List<Integer>> match3(List<List<Integer>> matrix) { // O(m*n)
-		if (matrix == null || matrix.isEmpty() || matrix.getFirst() == null || matrix.getFirst().isEmpty()) {
+		if (matrix == null || matrix.isEmpty() || matrix.get(0) == null || matrix.get(0).isEmpty()) {
 			return null; // O(1)
 		}
 		
 		int rows = matrix.size();
-		int cols = matrix.getFirst().size();
+		int cols = matrix.get(0).size();
 		
 		boolean[][] toReplace = new boolean[rows][cols];
 		

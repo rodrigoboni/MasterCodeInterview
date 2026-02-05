@@ -5,6 +5,11 @@ Big O Notation + Data Structures + Algorithms exercises with Java
 
 (The following content is a mix of course resume and some copy and paste of checklists, guides, step-by-step instructions etc - I wrote it as a way to fix better new knowledge and have a reference to read when needed)
 
+## Java Interview Resources
+- **[Java Interview Tips](JavaInterviewTips.md)** — index of all interview preparation guides
+- **[Top Java Senior Interview Questions](TopJavaSeniorInterviewQuestions.md)** — 94 Q&A covering Java Core, Spring Boot, and Databases for senior-level interviews
+- **[Top Java Concurrency Interview Questions](TopJavaConcurrencyInterviewQuestions.md)** — 73 Q&A covering JMM, threads, synchronization, executors, locks, and virtual threads
+
 ## Big O complexity chart
 ![bigocomplexitychart.jpg](bigocomplexitychart.jpg)
 
